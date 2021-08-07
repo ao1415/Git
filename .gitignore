@@ -1,1 +1,2 @@
-TouchPanic/tools/~$*.xlsx
+**/~$*.xlsx
+**/*.bak
