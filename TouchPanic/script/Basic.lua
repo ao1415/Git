@@ -74,7 +74,12 @@ gui.register(function()
 		end
 	end
 	
-	agg.text(0, 194, "next ball:" .. string.format("%s", memory.readdword(0x021EBB34)))
+	local exportList = {[0]="RB", [1]="RU", [2]="LD", [3]="LU", [4]="-"}
+	local exportPos = memory.readdword(0x021EC7D8)
+	if (exportPos < 0 or 3 < exportPos) then
+		exportPos = 4
+	end
+	agg.text(0, 194, "next ball:[" .. exportList[exportPos] .. "]" .. string.format("%s", memory.readdword(0x021EBB34)))
 	
 end)
 
